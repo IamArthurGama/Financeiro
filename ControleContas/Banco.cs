@@ -15,8 +15,19 @@ namespace ControleContas
 
         public Banco (string nome, string numero)
             {
-                _nome = nome;
-                _numero = numero;
+
+            if (nome == null)
+            {
+                throw new ArgumentException("É necessário que haja um nome para a criacao do banco.");
+            }
+
+            if (numero == null)
+            {
+                throw new ArgumentException("É necessário que haja um numero valido para a criacao do banco.");
+            }
+
+            _nome = nome;
+            _numero = numero;
             }
 
         public string Nome { get => _nome; set => _nome = value; }
